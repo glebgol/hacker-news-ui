@@ -1,8 +1,15 @@
+import ListItemText from "@mui/material/ListItemText";
+import ListItem from "@mui/material/ListItem";
+import {Link} from "react-router-dom";
+
 const NewsPreviewItem = (props) => {
+    const previewItem = props.item;
     return (
-        <li className='list-group-item'>
-            nnnj{props.score} {props.title} {props.authorName}
-        </li>
+        <ListItem>
+            <ListItemText primary={previewItem.authorName + ": " + previewItem.title}
+                          secondary={previewItem.date + " score: " + previewItem.score} />
+            <Link to={"news/" + previewItem.id}>Details</Link>
+        </ListItem>
     );
 };
 

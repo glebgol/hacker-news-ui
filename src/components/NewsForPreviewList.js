@@ -1,14 +1,14 @@
 import NewsPreviewItem from "./NewsPreviewItem";
+import List from "@mui/material/List";
 
 const NewsForPreviewList = (props) => {
     const list = props.news;
     return (
-        <ul className='basket list-group col-md-4'>l
-            <li className='list-group-item active'>Корзина</li>
+        <List sx={{ width: '100%', maxWidth: 500, bgcolor: 'background.paper' }}>
             {list.map((item) => {
-                return <NewsPreviewItem props={item}/>
+                return <NewsPreviewItem item={item}/>
             })}
-        </ul>
+        </List>
     );
 };
 

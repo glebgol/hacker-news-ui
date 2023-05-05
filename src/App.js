@@ -1,10 +1,17 @@
-import List from "./List";
+import MainPage from "./components/MainPage";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import News from "./components/News";
 
 function App() {
     return (
-    <div className="App">
-        <List />
-    </div>
+        <BrowserRouter>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<MainPage />}/>
+                    <Route path="/news/:id" element={<News />}/>
+                </Routes>
+            </div>
+        </BrowserRouter>
   );
 }
 
